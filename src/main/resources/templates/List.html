@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Management Portal</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+      <div class="container">
+        <div class="row">
+          <h1> List Students </h1>
+        </div>
+        <table class="table table-striped table-bordered" >
+          <thead class="table-dark">
+          <tr>
+            <th>Student Id</th>
+            <th>Student Name</th>
+            <th>Student DOB</th>
+            <th>Student Branch</th>
+            <th>Student GPA</th>
+          </tr>
+
+          </thead>
+          <tbody>
+          <tr th:each = "student: ${list}">
+            <td th:text ="${student.studentID}"></td>
+            <td th:text ="${student.studentName}"></td>
+            <td th:text ="${student.studentDOB}"></td>
+            <td th:text ="${student.studentBranch}"></td>
+            <td th:text ="${student.studentGPA}"></td>
+          </tr>
+
+          </tbody>
+
+        </table>
+
+
+      </div>
+</body>
+</html>
